@@ -1,0 +1,11 @@
+.Header {
+  background-color: pink;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 5vh;
+  color: white;
+}

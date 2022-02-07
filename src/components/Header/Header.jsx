@@ -3,5 +3,5 @@ import { useUser } from '../../context/UserContext';
 
 export default function Header() {
   const { user } = useUser();
-  return <div>hello there, {user}</div>;
+  return <div className="Header">hello there, {user}</div>;
 }
