@@ -1,5 +1,7 @@
 import './Header.css';
+import { useUser } from '../../context/UserContext';
 
 export default function Header() {
-  return <div>header component</div>;
+  const { user } = useUser();
+  return <div>hello there, {user}</div>;
 }

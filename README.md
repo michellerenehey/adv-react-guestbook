@@ -8,4 +8,4 @@ Components:
 - header (shows user name)
 - entry field (user enters message / sets message)
   (with button for 'sign book' or 'sign-out')
-- message field ()
+- messages (shows all messages)
