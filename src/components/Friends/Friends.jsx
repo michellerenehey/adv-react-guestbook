@@ -7,6 +7,7 @@ export default function Friends() {
   if (userArray)
     return (
       <div>
+        <p> A reminder of who I need to write to:</p>
         {userArray.map((item) => {
           return (
             <div key={item.id}>

@@ -36,6 +36,15 @@ export default function Home() {
             <textarea value={newMessage} onChange={(e) => setNewMessage(e.target.value)} />
             <div className="submit-button">
               <button type="submit">Submit</button>
+              {user && (
+                <button
+                  onClick={() => {
+                    setUser(''), setName('');
+                  }}
+                >
+                  New friend!
+                </button>
+              )}
             </div>
           </form>
         </div>
