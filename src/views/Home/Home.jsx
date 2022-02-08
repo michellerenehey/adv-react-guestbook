@@ -2,7 +2,6 @@ import './Home.css';
 import { useUser, useUserArray } from '../../context/UserContext';
 import { useMessages } from '../../context/MessageContext';
 import { useState } from 'react';
-import Friends from '../../components/Friends/Friends';
 
 export default function Home() {
   const [newMessage, setNewMessage] = useState('');
