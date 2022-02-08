@@ -30,7 +30,7 @@ test('renders renders header & entry fields on pageload', () => {
 });
 
 // TEST 2
-test('user can type name and message', () => {
+test('user can type name and message, name shows up in header, message on page, and new friend button appears', () => {
   render(
     <UserProvider>
       <MessageProvider>
@@ -39,16 +39,19 @@ test('user can type name and message', () => {
     </UserProvider>
   );
 
-  const nameInput = screen.getByPlaceholderText(/enter your name/i);
+  const nameInput = screen.getByPlaceholderText(/..name.../i);
   userEvent.type(nameInput, 'Michelle');
 
-  const messageInput = screen.getByPlaceholderText(/enter a message/i);
+  const messageInput = screen.getByPlaceholderText(/...message.../i);
   userEvent.type(messageInput, 'Have a good summer!');
 
-  const button = screen.getByRole('button', { name: /submit/i });
-  userEvent.click(button);
+  const submitButton = screen.getByRole('button', { name: /submit/i });
+  userEvent.click(submitButton);
+
+  const friendButton = screen.getByRole('button', { name: /new friend!/i });
 
   expect(screen.getByText(/last signed by michelle/i)).toBeInTheDocument();
   expect(screen.getByText(/have a good summer/i)).toBeInTheDocument();
   expect(screen.getByText(/xo, michelle/i)).toBeInTheDocument();
+  expect(friendButton).toBeInTheDocument();
 });

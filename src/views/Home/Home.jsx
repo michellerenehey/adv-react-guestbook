@@ -30,7 +30,7 @@ export default function Home() {
                 <label>Enter your name:</label>
                 <input
                   value={name}
-                  placeholder="enter your name"
+                  placeholder="...name..."
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
@@ -38,7 +38,7 @@ export default function Home() {
             <label>Enter a message:</label>
             <textarea
               value={newMessage}
-              placeholder="enter a message"
+              placeholder="...message..."
               onChange={(e) => setNewMessage(e.target.value)}
             />
             <div className="submit-button">
