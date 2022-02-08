@@ -1,5 +1,5 @@
 .Header {
-  background-color: pink;
+  background-color: #118ab2;
   height: 10vh;
   display: flex;
   flex-direction: column;
@@ -8,4 +8,5 @@
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 5vh;
   color: white;
+  font-weight: bold;
 }

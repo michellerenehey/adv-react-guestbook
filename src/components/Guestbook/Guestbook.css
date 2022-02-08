@@ -1,0 +1,22 @@
+.Guestbook {
+  font-family: 'Sacramento', cursive;
+  font-size: 5vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.entry {
+  background-color: #ffd166d6;
+  border-radius: 10px;
+  border: 1px black solid;
+  margin: 5px;
+  width: 30vw;
+}
+.message {
+  margin: 5px;
+}
+
+.name {
+  margin: 5px;
+}

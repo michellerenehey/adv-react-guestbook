@@ -4,6 +4,8 @@ import { useUser } from '../../context/UserContext';
 export default function Header() {
   const { user } = useUser();
   return (
-    <div className="Header">{user ? <p>hello there, {user}</p> : <p>hello there, old pal</p>}</div>
+    <div className="Header">
+      {user ? <p>last signed by {user}</p> : <p>~A vErY cOoL yEaRbOoK~</p>}
+    </div>
   );
 }

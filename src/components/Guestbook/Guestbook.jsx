@@ -5,12 +5,13 @@ export default function Guestbook() {
   const { messages } = useMessages();
 
   return (
-    <div>
+    <div className="Guestbook">
       {messages.map((message) => {
         return (
-          <p key={message.note}>
-            {message.note} from {message.name}
-          </p>
+          <div key={message.note} className="entry">
+            <p className="message">{message.note}</p>
+            <p className="name">xo, {message.name}</p>
+          </div>
         );
       })}
     </div>

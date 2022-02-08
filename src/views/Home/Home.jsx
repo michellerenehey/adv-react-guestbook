@@ -6,8 +6,7 @@ import { useState } from 'react';
 export default function Home() {
   const [newMessage, setNewMessage] = useState('');
   const [name, setName] = useState('');
-
-  const { user, setUser } = useUser();
+  const { setUser } = useUser();
   const { messages, setMessages } = useMessages();
 
   const handleSubmit = (e) => {
@@ -17,18 +16,24 @@ export default function Home() {
     setNewMessage('');
   };
 
-  console.log(messages);
-
   return (
-    <div>
-      <h1>Guestbook!</h1>
-      <label>Enter Name</label>
-      <input value={name} onChange={(e) => setName(e.target.value)} />
-      <form onSubmit={handleSubmit}>
-        <label>Enter a message:</label>
-        <textarea value={newMessage} onChange={(e) => setNewMessage(e.target.value)} />
-        <button type="submit">Submit</button>
-      </form>
+    <div className="Home">
+      <h1>Will you sign my yearbook?</h1>
+      <div className="guestbook">
+        <div className="guestbook-name">
+          <label>Enter your name:</label>
+          <input value={name} onChange={(e) => setName(e.target.value)} />
+        </div>
+        <div className="guestbook-entry">
+          <form onSubmit={handleSubmit}>
+            <label>Enter a message:</label>
+            <textarea value={newMessage} onChange={(e) => setNewMessage(e.target.value)} />
+            <div className="submit-button">
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
