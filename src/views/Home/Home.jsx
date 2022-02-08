@@ -28,11 +28,19 @@ export default function Home() {
             {!user && (
               <div className="guestbook-name">
                 <label>Enter your name:</label>
-                <input value={name} onChange={(e) => setName(e.target.value)} />
+                <input
+                  value={name}
+                  placeholder="enter your name"
+                  onChange={(e) => setName(e.target.value)}
+                />
               </div>
             )}
             <label>Enter a message:</label>
-            <textarea value={newMessage} onChange={(e) => setNewMessage(e.target.value)} />
+            <textarea
+              value={newMessage}
+              placeholder="enter a message"
+              onChange={(e) => setNewMessage(e.target.value)}
+            />
             <div className="submit-button">
               <button type="submit">Submit</button>
               {user && (

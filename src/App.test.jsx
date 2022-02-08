@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 import { UserProvider } from './context/UserContext';
 import { MessageProvider } from './context/MessageContext';
+import userEvent from '@testing-library/user-event';
 
 // TEST 1
 test('renders renders header & entry fields on pageload', () => {
@@ -26,4 +27,28 @@ test('renders renders header & entry fields on pageload', () => {
 
   const button = screen.getByRole('button', { name: /submit/i });
   expect(button).toBeInTheDocument();
+});
+
+// TEST 2
+test('user can type name and message', () => {
+  render(
+    <UserProvider>
+      <MessageProvider>
+        <App />
+      </MessageProvider>
+    </UserProvider>
+  );
+
+  const nameInput = screen.getByPlaceholderText(/enter your name/i);
+  userEvent.type(nameInput, 'Michelle');
+
+  const messageInput = screen.getByPlaceholderText(/enter a message/i);
+  userEvent.type(messageInput, 'Have a good summer!');
+
+  const button = screen.getByRole('button', { name: /submit/i });
+  userEvent.click(button);
+
+  expect(screen.getByText(/last signed by michelle/i)).toBeInTheDocument();
+  expect(screen.getByText(/have a good summer/i)).toBeInTheDocument();
+  expect(screen.getByText(/xo, michelle/i)).toBeInTheDocument();
 });
