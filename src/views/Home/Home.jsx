@@ -13,14 +13,16 @@ export default function Home() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setUser(name);
-    setMessages([...messages, { name, message: newMessage }]);
+    setMessages([...messages, { name, note: newMessage }]);
     setNewMessage('');
   };
+
+  console.log(messages);
 
   return (
     <div>
       <h1>Guestbook!</h1>
-      <label>Name</label>
+      <label>Enter Name</label>
       <input value={name} onChange={(e) => setName(e.target.value)} />
       <form onSubmit={handleSubmit}>
         <label>Enter a message:</label>
