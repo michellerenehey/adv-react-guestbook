@@ -5,7 +5,7 @@ import Guestbook from './components/Guestbook/Guestbook';
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Header />
       <Home />
       <Guestbook />
