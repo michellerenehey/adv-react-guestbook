@@ -7,9 +7,9 @@ import Friends from '../../components/Friends/Friends';
 export default function Home() {
   const [newMessage, setNewMessage] = useState('');
   const [name, setName] = useState('');
-  const { user, setUser } = useUser();
+  const { setUser } = useUser();
   const { messages, setMessages } = useMessages();
-  const [userArray, setUserArray] = useState([]);
+  // const [userArray, setUserArray] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ export default function Home() {
     setNewMessage('');
     setUserArray([...userArray, { name: name, id: today.getSeconds() }]);
   };
-  console.log(userArray);
+
   return (
     <div className="Home">
       <h1>Will you sign my yearbook?</h1>
