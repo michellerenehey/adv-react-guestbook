@@ -1,5 +1,5 @@
 import './Home.css';
-import { useUser } from '../../context/UserContext';
+import { useUser, useUserArray } from '../../context/UserContext';
 import { useMessages } from '../../context/MessageContext';
 import { useState } from 'react';
 import Friends from '../../components/Friends/Friends';
@@ -9,7 +9,7 @@ export default function Home() {
   const [name, setName] = useState('');
   const { setUser } = useUser();
   const { messages, setMessages } = useMessages();
-  // const [userArray, setUserArray] = useState([]);
+  const { userArray, setUserArray } = useUserArray();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,7 +38,7 @@ export default function Home() {
           </form>
         </div>
       </div>
-      <Friends userArray={userArray} />
+      {/* <Friends userArray={userArray} /> */}
     </div>
   );
 }

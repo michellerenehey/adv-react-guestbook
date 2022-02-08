@@ -1,7 +1,9 @@
 import './Friends.css';
-// import { useUser } from '../../context/UserContext';
+import { useUserArray } from '../../context/UserContext';
 
-export default function Friends({ userArray }) {
+export default function Friends() {
+  const { userArray } = useUserArray();
+
   if (userArray)
     return (
       <div>
