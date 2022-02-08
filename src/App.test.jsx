@@ -48,7 +48,7 @@ test('user can type name and message, name shows up in header, message on page, 
   const submitButton = screen.getByRole('button', { name: /submit/i });
   userEvent.click(submitButton);
 
-  const friendButton = screen.getByRole('button', { name: /new friend!/i });
+  const friendButton = screen.getByRole('button', { name: /not michelle?/i });
 
   expect(screen.getByText(/last signed by michelle/i)).toBeInTheDocument();
   expect(screen.getByText(/have a good summer/i)).toBeInTheDocument();

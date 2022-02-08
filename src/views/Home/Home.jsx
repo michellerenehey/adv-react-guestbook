@@ -49,7 +49,7 @@ export default function Home() {
                     setUser(''), setName('');
                   }}
                 >
-                  New friend!
+                  Not {user}?
                 </button>
               )}
             </div>
