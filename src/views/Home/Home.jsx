@@ -2,20 +2,24 @@ import './Home.css';
 import { useUser } from '../../context/UserContext';
 import { useMessages } from '../../context/MessageContext';
 import { useState } from 'react';
+import Friends from '../../components/Friends/Friends';
 
 export default function Home() {
   const [newMessage, setNewMessage] = useState('');
   const [name, setName] = useState('');
-  const { setUser } = useUser();
+  const { user, setUser } = useUser();
   const { messages, setMessages } = useMessages();
+  const [userArray, setUserArray] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setUser(name);
-    setMessages([...messages, { name, note: newMessage }]);
+    let today = new Date();
+    setMessages([...messages, { name, note: newMessage, id: today.getSeconds() }]);
     setNewMessage('');
+    setUserArray([...userArray, { name: name, id: today.getSeconds() }]);
   };
-
+  console.log(userArray);
   return (
     <div className="Home">
       <h1>Will you sign my yearbook?</h1>
@@ -34,6 +38,7 @@ export default function Home() {
           </form>
         </div>
       </div>
+      <Friends userArray={userArray} />
     </div>
   );
 }
