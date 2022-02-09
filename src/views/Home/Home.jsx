@@ -12,6 +12,18 @@ export default function Home() {
 
   console.log(userArray);
 
+  // how to use a useEffect without a data call:
+  // import useEffet
+  // make a state: const [shouldSubmit, setShouldSubmit] = useState(false);
+  // useEffect(() => {
+  //   if (shouldSubmit) {
+  //     let today = new Date();
+  //     setUserArray([...userArray, { name: name, id: today.getSeconds() }]);
+  //     setShouldSubmit(false);
+  //   }
+  // }, [shouldSubmit]);
+  // then in the handlesubmit, setShouldSubmit(true)
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setUser(name);
