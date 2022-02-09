@@ -4,6 +4,5 @@
 .App {
   text-align: center;
   margin: 0;
-  /* height: 100vh; */
-  background-color: #ef476e79;
+  background-color: lightgray;
 }

@@ -2,6 +2,7 @@ import './Home.css';
 import { useUser, useUserArray } from '../../context/UserContext';
 import { useMessages } from '../../context/MessageContext';
 import { useState } from 'react';
+import Guestbook from '../../components/Guestbook/Guestbook';
 
 export default function Home() {
   const [newMessage, setNewMessage] = useState('');
@@ -70,7 +71,7 @@ export default function Home() {
           </form>
         </div>
       </div>
-      {/* <Friends userArray={userArray} /> */}
+      <Guestbook />
     </div>
   );
 }
