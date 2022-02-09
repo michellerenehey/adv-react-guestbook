@@ -2,8 +2,8 @@
   background-color: gray;
   height: 10vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 5vh;
