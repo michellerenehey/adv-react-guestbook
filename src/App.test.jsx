@@ -4,7 +4,7 @@ import { UserProvider } from './context/UserContext';
 import { MessageProvider } from './context/MessageContext';
 import userEvent from '@testing-library/user-event';
 
-test('renders renders header & entry fields on pageload', () => {
+test('renders header & entry fields on pageload', () => {
   render(
     <UserProvider>
       <MessageProvider>
@@ -28,7 +28,7 @@ test('renders renders header & entry fields on pageload', () => {
   expect(button).toBeInTheDocument();
 });
 
-test('user can type name and message, name shows up in header, message on page, list of friends to write to, and new friend button appears', () => {
+test('user can type name and message, name shows up in header, message on page, list of friends to write to on submit - and new friend button appears', () => {
   render(
     <UserProvider>
       <MessageProvider>
