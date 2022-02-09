@@ -10,6 +10,8 @@ export default function Home() {
   const { messages, setMessages } = useMessages();
   const { userArray, setUserArray } = useUserArray();
 
+  console.log(userArray);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setUser(name);
