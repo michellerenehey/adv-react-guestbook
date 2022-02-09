@@ -36,13 +36,13 @@ export default function Home() {
 
   return (
     <div className="Home">
-      <h1>Will you sign my yearbook?</h1>
-      <div className="guestbook">
-        <div className="guestbook-entry">
+      <h3>Will you sign my yearbook?</h3>
+      <div className="book-outer">
+        <div className="book-inner">
           <form onSubmit={handleSubmit}>
             {!user && (
-              <div className="guestbook-name">
-                <label>Enter your name:</label>
+              <div className="book-name">
+                <label>Enter your name: </label>
                 <input
                   value={name}
                   placeholder="...name..."
@@ -50,12 +50,14 @@ export default function Home() {
                 />
               </div>
             )}
-            <label>Enter a message:</label>
-            <textarea
-              value={newMessage}
-              placeholder="...message..."
-              onChange={(e) => setNewMessage(e.target.value)}
-            />
+            <div className="book-message">
+              <label>Enter a message: </label>
+              <textarea
+                value={newMessage}
+                placeholder="...message..."
+                onChange={(e) => setNewMessage(e.target.value)}
+              />
+            </div>
             <div className="submit-button">
               <button type="submit">Submit</button>
               {user && (

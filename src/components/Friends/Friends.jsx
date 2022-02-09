@@ -5,10 +5,10 @@ export default function Friends() {
   const { userArray } = useUserArray();
 
   return (
-    <>
+    <div className="Friends">
       {userArray.length > 0 && (
         <div>
-          <p> A reminder of who I need to write to:</p>
+          <h3> Who signed my yearbook:</h3>
           {userArray.map((item) => {
             return (
               <div key={item.id}>
@@ -18,6 +18,6 @@ export default function Friends() {
           })}
         </div>
       )}
-    </>
+    </div>
   );
 }

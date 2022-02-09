@@ -1,11 +1,11 @@
 .Header {
-  background-color: gray;
+  background-color: rgba(128, 128, 128, 0.44);
   height: 10vh;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Text Me One', sans-serif;
   font-size: 5vh;
   color: white;
   font-weight: bold;

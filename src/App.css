@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 /* font-family: 'Sacramento', cursive; */
+
+@import url('https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap');
+/* font-family: 'Text Me One', sans-serif; */
+
 .App {
   text-align: center;
   margin: 0;
-  background-color: lightgray;
+  background-color: white;
 }
