@@ -4,7 +4,6 @@ import { UserProvider } from './context/UserContext';
 import { MessageProvider } from './context/MessageContext';
 import userEvent from '@testing-library/user-event';
 
-// TEST 1
 test('renders renders header & entry fields on pageload', () => {
   render(
     <UserProvider>
@@ -29,8 +28,7 @@ test('renders renders header & entry fields on pageload', () => {
   expect(button).toBeInTheDocument();
 });
 
-// TEST 2
-test('user can type name and message, name shows up in header, message on page, and new friend button appears', () => {
+test('user can type name and message, name shows up in header, message on page, list of friends to write to, and new friend button appears', () => {
   render(
     <UserProvider>
       <MessageProvider>
@@ -53,5 +51,7 @@ test('user can type name and message, name shows up in header, message on page, 
   expect(screen.getByText(/last signed by michelle/i)).toBeInTheDocument();
   expect(screen.getByText(/have a good summer/i)).toBeInTheDocument();
   expect(screen.getByText(/xo, michelle/i)).toBeInTheDocument();
+  expect(screen.getByText(/a reminder of who i need to write to:/i)).toBeInTheDocument();
+
   expect(friendButton).toBeInTheDocument();
 });
