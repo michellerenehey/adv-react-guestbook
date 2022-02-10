@@ -28,7 +28,7 @@ test('renders header & entry fields on pageload', () => {
   expect(button).toBeInTheDocument();
 });
 
-test('user can type name and message, name shows up in header, message on page, list of friends to write to on submit - and new friend button appears', () => {
+test('user can type name and message, name shows up in header, message on page, and new friend button appears', () => {
   render(
     <UserProvider>
       <MessageProvider>
@@ -51,7 +51,6 @@ test('user can type name and message, name shows up in header, message on page, 
   expect(screen.getByText(/last signed by michelle/i)).toBeInTheDocument();
   expect(screen.getByText(/have a good summer/i)).toBeInTheDocument();
   expect(screen.getByText(/xo, michelle/i)).toBeInTheDocument();
-  expect(screen.getByText(/a reminder of who i need to write to:/i)).toBeInTheDocument();
 
   expect(friendButton).toBeInTheDocument();
 });
