@@ -1,15 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 import { UserProvider } from './context/UserContext';
-import { MessageProvider } from './context/MessageContext';
+import { EntriesProvider } from './context/EntriesContext';
 import userEvent from '@testing-library/user-event';
 
 test('renders header & entry fields on pageload', () => {
   render(
     <UserProvider>
-      <MessageProvider>
+      <EntriesProvider>
         <App />
-      </MessageProvider>
+      </EntriesProvider>
     </UserProvider>
   );
   const header = screen.getByText(/~A vErY cOoL yEaRbOoK~/i);

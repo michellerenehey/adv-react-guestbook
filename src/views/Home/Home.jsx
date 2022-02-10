@@ -1,6 +1,6 @@
 import './Home.css';
 import { useUser, useUserArray } from '../../context/UserContext';
-import { useMessages } from '../../context/MessageContext';
+import { useEntries } from '../../context/EntriesContext';
 import { useState } from 'react';
 import Guestbook from '../../components/Guestbook/Guestbook';
 import signature from '../../assets/signature.png';
@@ -9,7 +9,7 @@ export default function Home() {
   const [newMessage, setNewMessage] = useState('');
   const [name, setName] = useState('');
   const { user, setUser } = useUser();
-  const { messages, setMessages } = useMessages();
+  const { entries, setEntries } = useEntries();
   const { userArray, setUserArray } = useUserArray();
 
   // add loading state?
@@ -25,7 +25,7 @@ export default function Home() {
     e.preventDefault();
     setUser(name);
     let today = new Date();
-    setMessages([...messages, { name, note: newMessage, id: today.getSeconds() }]);
+    setEntries([...entries, { name, note: newMessage, id: today.getSeconds() }]);
     setNewMessage('');
     setUserArray([...userArray, { name: name, id: today.getSeconds() }]);
   };
