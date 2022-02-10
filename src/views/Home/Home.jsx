@@ -12,6 +12,7 @@ export default function Home() {
   const { messages, setMessages } = useMessages();
   const { userArray, setUserArray } = useUserArray();
 
+  // add loading state?
   // useEffect(() => {
   //   if (user.name) {
   //     setLoading(false)
