@@ -3,10 +3,13 @@ import { useUser, useUserArray } from '../../context/UserContext';
 import { useMessages } from '../../context/MessageContext';
 import { useState } from 'react';
 import Guestbook from '../../components/Guestbook/Guestbook';
+import signature from '../../assets/signature.png';
+import { addSubmission } from '../../services/entries';
 
 export default function Home() {
   const [newMessage, setNewMessage] = useState('');
   const [name, setName] = useState('');
+  const [errorMessage, setErrorMessage] = useState(null);
   const { user, setUser } = useUser();
   const { messages, setMessages } = useMessages();
   const { userArray, setUserArray } = useUserArray();
@@ -25,18 +28,28 @@ export default function Home() {
   // }, [shouldSubmit]);
   // then in the handlesubmit, setShouldSubmit(true)
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setUser(name);
-    let today = new Date();
-    setMessages([...messages, { name, note: newMessage, id: today.getSeconds() }]);
-    setNewMessage('');
-    setUserArray([...userArray, { name: name, id: today.getSeconds() }]);
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      setUser(name);
+      let today = new Date();
+      setMessages([...messages, { name, note: newMessage, id: today.getSeconds() }]);
+      setNewMessage('');
+      setUserArray([...userArray, { name: name, id: today.getSeconds() }]);
+      await addSubmission(name, newMessage);
+    } catch {
+      setErrorMessage('Oh no! Something went wrong!');
+    }
   };
 
   return (
     <div className="Home">
-      <h3>Will you sign my yearbook?</h3>
+      {errorMessage && <p>{errorMessage}</p>}
+      <div className="book-header">
+        <img className="signature" src={signature} alt="icon of pen" />
+        <h3>Will you sign my yearbook?</h3>
+        <img className="signature" src={signature} alt="icon of pen" />
+      </div>
       <div className="book-outer">
         <div className="book-inner">
           <form onSubmit={handleSubmit}>

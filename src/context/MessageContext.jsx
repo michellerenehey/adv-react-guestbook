@@ -1,9 +1,18 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
+import { getSubmissions } from '../services/entries';
 
 const MessageContext = createContext();
 
 function MessageProvider({ children }) {
   const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getSubmissions();
+      setMessages(data);
+    };
+    fetchData();
+  }, []);
 
   return (
     <MessageContext.Provider value={{ messages, setMessages }}>{children}</MessageContext.Provider>

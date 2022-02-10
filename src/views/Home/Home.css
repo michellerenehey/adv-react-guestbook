@@ -37,3 +37,14 @@ h3 {
   font-family: 'Sacramento', cursive;
   font-size: 8vh;
 }
+
+.book-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.signature {
+  height: 10vh;
+  margin: 10px;
+}
