@@ -4,47 +4,33 @@ import { useMessages } from '../../context/MessageContext';
 import { useState } from 'react';
 import Guestbook from '../../components/Guestbook/Guestbook';
 import signature from '../../assets/signature.png';
-import { addSubmission } from '../../services/entries';
 
 export default function Home() {
   const [newMessage, setNewMessage] = useState('');
   const [name, setName] = useState('');
-  const [errorMessage, setErrorMessage] = useState(null);
   const { user, setUser } = useUser();
   const { messages, setMessages } = useMessages();
   const { userArray, setUserArray } = useUserArray();
 
-  console.log(userArray);
-
-  // how to use a useEffect without a data call:
-  // import useEffet
-  // make a state: const [shouldSubmit, setShouldSubmit] = useState(false);
   // useEffect(() => {
-  //   if (shouldSubmit) {
-  //     let today = new Date();
-  //     setUserArray([...userArray, { name: name, id: today.getSeconds() }]);
-  //     setShouldSubmit(false);
+  //   if (user.name) {
+  //     setLoading(false)
+  //   } else {
+  //     setLoading(true)
   //   }
-  // }, [shouldSubmit]);
-  // then in the handlesubmit, setShouldSubmit(true)
+  // }, [user])
 
   const handleSubmit = async (e) => {
-    try {
-      e.preventDefault();
-      setUser(name);
-      let today = new Date();
-      setMessages([...messages, { name, note: newMessage, id: today.getSeconds() }]);
-      setNewMessage('');
-      setUserArray([...userArray, { name: name, id: today.getSeconds() }]);
-      await addSubmission(name, newMessage);
-    } catch {
-      setErrorMessage('Oh no! Something went wrong!');
-    }
+    e.preventDefault();
+    setUser(name);
+    let today = new Date();
+    setMessages([...messages, { name, note: newMessage, id: today.getSeconds() }]);
+    setNewMessage('');
+    setUserArray([...userArray, { name: name, id: today.getSeconds() }]);
   };
 
   return (
     <div className="Home">
-      {errorMessage && <p>{errorMessage}</p>}
       <div className="book-header">
         <img className="signature" src={signature} alt="icon of pen" />
         <h3>Will you sign my yearbook?</h3>
