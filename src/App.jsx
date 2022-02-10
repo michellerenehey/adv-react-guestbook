@@ -4,10 +4,14 @@ import Home from './views/Home/Home';
 import Friends from './components/Friends/Friends';
 import Layout from './views/Layout/Layout';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { useTheme } from './hooks/useTheme';
 
 function App() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <div className="App">
+    <div className={`App ${theme}`}>
+      <button onClick={toggleTheme}>switch color theme</button>
       <BrowserRouter>
         <Layout>
           <Switch>
