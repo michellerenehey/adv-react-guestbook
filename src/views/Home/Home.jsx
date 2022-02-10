@@ -33,10 +33,10 @@ export default function Home() {
       e.preventDefault();
       setUser(name);
       let today = new Date();
-      setMessages([...messages, { name, note: newMessage, id: today.getSeconds() }]);
+      setMessages([...messages, { name, message: newMessage, id: today.getSeconds() }]);
+      await addSubmission(name, newMessage);
       setNewMessage('');
       setUserArray([...userArray, { name: name, id: today.getSeconds() }]);
-      await addSubmission(name, newMessage);
     } catch {
       setErrorMessage('Oh no! Something went wrong!');
     }

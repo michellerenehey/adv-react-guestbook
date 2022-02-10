@@ -9,7 +9,7 @@ export default function Guestbook() {
       {messages.map((message) => {
         return (
           <div key={message.id} className="entry">
-            <p className="message">{message.note}</p>
+            <p className="message">{message.message}</p>
             <p className="name">xo, {message.name}</p>
           </div>
         );

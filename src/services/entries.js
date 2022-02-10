@@ -5,6 +5,11 @@ export async function getSubmissions() {
   return checkError(response);
 }
 
+export async function getNames() {
+  const response = await client.from('guestbook').select('name');
+  return checkError(response);
+}
+
 export async function addSubmission(name, message) {
   const response = await client.from('guestbook').insert({ name, message });
   return checkError(response);

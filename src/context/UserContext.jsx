@@ -1,10 +1,19 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
+import { getNames } from '../services/entries';
 
 const UserContext = createContext();
 
 function UserProvider({ children }) {
   const [user, setUser] = useState('');
   const [userArray, setUserArray] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getNames();
+      setUserArray(data);
+    };
+    fetchData();
+  }, []);
 
   return (
     <UserContext.Provider value={{ user, setUser, userArray, setUserArray }}>
