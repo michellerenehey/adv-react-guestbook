@@ -1,4 +1,3 @@
-import './Friends.css';
 import { useUserArray } from '../../context/UserContext';
 
 export default function Friends() {
