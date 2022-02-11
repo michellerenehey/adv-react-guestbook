@@ -2,7 +2,7 @@ import './Header.css';
 import { useUser } from '../../../context/UserContext';
 import { Link } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({ toggleTheme }) {
   const { user } = useUser();
 
   return (
@@ -14,6 +14,9 @@ export default function Header() {
       <Link to="/friends" className="header-link">
         Friends
       </Link>
+      <button className="theme-button" onClick={toggleTheme}>
+        switch color theme
+      </button>
     </div>
   );
 }

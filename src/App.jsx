@@ -11,9 +11,8 @@ function App() {
 
   return (
     <div className={`App ${theme}`}>
-      <button onClick={toggleTheme}>switch color theme</button>
       <BrowserRouter>
-        <Layout>
+        <Layout toggleTheme={toggleTheme}>
           <Switch>
             <Route exact path="/">
               <Home />

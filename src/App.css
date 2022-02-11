@@ -23,3 +23,7 @@
   color: #000;
   transition: 0.3s all;
 }
+
+.theme-button {
+  width: 10vw;
+}
