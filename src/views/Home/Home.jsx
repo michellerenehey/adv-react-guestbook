@@ -12,15 +12,6 @@ export default function Home() {
   const { entries, setEntries } = useEntries();
   const { userArray, setUserArray } = useUserArray();
 
-  // add loading state?
-  // useEffect(() => {
-  //   if (user.name) {
-  //     setLoading(false)
-  //   } else {
-  //     setLoading(true)
-  //   }
-  // }, [user])
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setUser(name);
