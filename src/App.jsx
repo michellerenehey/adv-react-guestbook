@@ -4,15 +4,16 @@ import Home from './views/Home/Home';
 import Friends from './components/Friends/Friends';
 import Layout from './views/Layout/Layout';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { useTheme } from './hooks/useTheme';
+// import { useTheme } from './hooks/useTheme';
+import { useTheme } from './context/ThemeContext';
 
 function App() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={`App ${theme}`}>
       <BrowserRouter>
-        <Layout theme={theme} toggleTheme={toggleTheme}>
+        <Layout>
           <Switch>
             <Route exact path="/">
               <Home />

@@ -1,9 +1,11 @@
 import './Header.css';
 import { useUser } from '../../../context/UserContext';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../../../context/ThemeContext';
 
-export default function Header({ theme, toggleTheme }) {
+export default function Header() {
   const { user } = useUser();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <div className={`Header ${theme}`}>
