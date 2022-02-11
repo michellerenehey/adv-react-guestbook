@@ -12,7 +12,7 @@ function App() {
   return (
     <div className={`App ${theme}`}>
       <BrowserRouter>
-        <Layout toggleTheme={toggleTheme}>
+        <Layout theme={theme} toggleTheme={toggleTheme}>
           <Switch>
             <Route exact path="/">
               <Home />

@@ -10,3 +10,11 @@
   color: white;
   font-weight: bold;
 }
+
+.Header.dark {
+  background-color: orangered;
+}
+
+.Header.light {
+  background-color: gray;
+}
