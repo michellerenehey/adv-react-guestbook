@@ -31,9 +31,9 @@ test('renders header & entry fields on pageload', () => {
 test('user can type name and message, name shows up in header, message on page, and new friend button appears', () => {
   render(
     <UserProvider>
-      <MessageProvider>
+      <EntriesProvider>
         <App />
-      </MessageProvider>
+      </EntriesProvider>
     </UserProvider>
   );
 
