@@ -11,6 +11,8 @@
 - a list of all the messages
 - a list of all the people who have signed
 
+# Add a few contexts in order to pass props!
+
 # Credit
 
 - Icon from (yut1655)[https://www.flaticon.com/authors/yut1655] user on flaticon.com
