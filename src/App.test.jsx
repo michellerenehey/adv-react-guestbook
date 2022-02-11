@@ -2,13 +2,16 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 import { UserProvider } from './context/UserContext';
 import { EntriesProvider } from './context/EntriesContext';
+import { ThemeProvider } from './context/ThemeContext';
 import userEvent from '@testing-library/user-event';
 
 test('renders header & entry fields on pageload', () => {
   render(
     <UserProvider>
       <EntriesProvider>
-        <App />
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
       </EntriesProvider>
     </UserProvider>
   );
@@ -32,7 +35,9 @@ test('user can type name and message, name shows up in header, message on page, 
   render(
     <UserProvider>
       <EntriesProvider>
-        <App />
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
       </EntriesProvider>
     </UserProvider>
   );
