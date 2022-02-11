@@ -1,0 +1,40 @@
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.guestbook {
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 20px;
+  background-color: #ef476f;
+  font-size: 25px;
+}
+
+.submit-button {
+  text-align: center;
+}
+
+button {
+  background-color: #06d6a0;
+  font-family: 'Open Sans Condensed', sans-serif;
+  width: 75px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.guestbook-name {
+  margin: 5px;
+}
+
+h1 {
+  color: #073b4c;
+  font-family: 'Sacramento', cursive;
+  font-size: 10vh;
+}
