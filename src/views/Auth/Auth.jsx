@@ -9,7 +9,6 @@ export default function Auth() {
   const [error, setError] = useState(null);
   const { setUser } = useUser();
   const location = useLocation();
-  console.log(location);
   const history = useHistory();
 
   const handleLogin = (e) => {
@@ -19,7 +18,8 @@ export default function Auth() {
       password === process.env.REACT_APP_AUTH_PASSWORD
     ) {
       setUser({ email });
-      // send user to last page they were on
+      const { from } = location.state || { from: { pathname: '/' } };
+      history.replace(from.pathname);
     } else {
       setError('Wrong credentials, try again!');
     }
