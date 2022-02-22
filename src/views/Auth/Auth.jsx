@@ -4,7 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 
 export default function Auth() {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const { setUser } = useUser();
@@ -14,10 +14,10 @@ export default function Auth() {
   const handleLogin = (e) => {
     e.preventDefault();
     if (
-      email === process.env.REACT_APP_AUTH_USERNAME &&
+      username === process.env.REACT_APP_AUTH_USERNAME &&
       password === process.env.REACT_APP_AUTH_PASSWORD
     ) {
-      setUser({ email });
+      setUser({ username });
       const { from } = location.state || { from: { pathname: '/' } };
       history.replace(from.pathname);
     } else {
@@ -30,9 +30,9 @@ export default function Auth() {
         <h1>Login</h1>
         <input
           type="email"
-          value={email}
+          value={username}
           placeholder="enter email"
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setUsername(e.target.value)}
         />
         <input
           type="text"
