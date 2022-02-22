@@ -2,6 +2,7 @@ import './App.css';
 import Home from './views/Home/Home';
 import Friends from './components/Friends/Friends';
 import Layout from './views/Layout/Layout';
+import Auth from './views/Auth/Auth';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { useTheme } from './context/ThemeContext';
 
@@ -13,6 +14,9 @@ function App() {
       <BrowserRouter>
         <Layout>
           <Switch>
+            <Route exact path="/login">
+              <Auth />
+            </Route>
             <Route exact path="/">
               <Home />
             </Route>
