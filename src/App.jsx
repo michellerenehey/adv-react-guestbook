@@ -3,6 +3,7 @@ import Home from './views/Home/Home';
 import Friends from './components/Friends/Friends';
 import Layout from './views/Layout/Layout';
 import Auth from './views/Auth/Auth';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { useTheme } from './context/ThemeContext';
 
@@ -17,10 +18,10 @@ function App() {
             <Route exact path="/login">
               <Auth />
             </Route>
-            <Route exact path="/">
+            <PrivateRoute exact path="/">
               <Home />
-            </Route>
-            <Route exacpt path="/friends">
+            </PrivateRoute>
+            <Route exact path="/friends">
               <Friends />
             </Route>
           </Switch>
