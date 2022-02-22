@@ -3,57 +3,26 @@
 exports[`user can login 1`] = `
 <div>
   <div
-    class="Home"
+    class="Auth"
   >
-    <div
-      class="book-header"
-    >
-      <img
-        alt="icon of pen"
-        class="signature"
-        src="signature.png"
+    <form>
+      <h1>
+        Login
+      </h1>
+      <input
+        placeholder="enter username"
+        type="email"
+        value=""
       />
-      <h3>
-        Will you sign my yearbook?
-      </h3>
-      <img
-        alt="icon of pen"
-        class="signature"
-        src="signature.png"
+      <input
+        placeholder="enter password"
+        type="text"
+        value=""
       />
-    </div>
-    <div
-      class="book-outer"
-    >
-      <div
-        class="book-inner"
-      >
-        <form>
-          <div
-            class="book-message"
-          >
-            <label>
-              Enter a message: 
-            </label>
-            <textarea
-              placeholder="...message..."
-            />
-          </div>
-          <div
-            class="submit-button"
-          >
-            <button
-              type="submit"
-            >
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div
-      class="Guestbook"
-    />
+      <button>
+        Submit
+      </button>
+    </form>
   </div>
 </div>
 `;
