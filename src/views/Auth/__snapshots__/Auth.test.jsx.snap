@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`user can login 1`] = `
+<div>
+  <div
+    class="Home"
+  >
+    <div
+      class="book-header"
+    >
+      <img
+        alt="icon of pen"
+        class="signature"
+        src="signature.png"
+      />
+      <h3>
+        Will you sign my yearbook?
+      </h3>
+      <img
+        alt="icon of pen"
+        class="signature"
+        src="signature.png"
+      />
+    </div>
+    <div
+      class="book-outer"
+    >
+      <div
+        class="book-inner"
+      >
+        <form>
+          <div
+            class="book-message"
+          >
+            <label>
+              Enter a message: 
+            </label>
+            <textarea
+              placeholder="...message..."
+            />
+          </div>
+          <div
+            class="submit-button"
+          >
+            <button
+              type="submit"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div
+      class="Guestbook"
+    />
+  </div>
+</div>
+`;
