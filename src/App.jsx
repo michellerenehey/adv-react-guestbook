@@ -21,9 +21,9 @@ function App() {
             <PrivateRoute exact path="/">
               <Home />
             </PrivateRoute>
-            <Route exact path="/friends">
+            <PrivateRoute exact path="/friends">
               <Friends />
-            </Route>
+            </PrivateRoute>
           </Switch>
         </Layout>
       </BrowserRouter>

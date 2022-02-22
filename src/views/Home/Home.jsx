@@ -44,7 +44,6 @@ export default function Home() {
                 <button
                   onClick={() => {
                     setUser('');
-                    // make a logout here
                   }}
                 >
                   LOG OUT
