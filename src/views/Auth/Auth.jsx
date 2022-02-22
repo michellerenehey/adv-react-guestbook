@@ -6,16 +6,22 @@ import { useUser } from '../../context/UserContext';
 export default function Auth() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const { setUser } = useUser();
-  // const location = useLocation();
-  // const history = useHistory();
+  const [error, setError] = useState(null);
+  const { setUser } = useUser();
+  const location = useLocation();
+  console.log(location);
+  const history = useHistory();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (email === process.env.REACT_APP_AUTH_USERNAME) {
-      console.log('yes');
+    if (
+      email === process.env.REACT_APP_AUTH_USERNAME &&
+      password === process.env.REACT_APP_AUTH_PASSWORD
+    ) {
+      setUser({ email });
+      // send user to last page they were on
     } else {
-      console.log('nope');
+      setError('Wrong credentials, try again!');
     }
   };
   return (
@@ -36,6 +42,7 @@ export default function Auth() {
         />
         <button onClick={handleLogin}>Submit</button>
       </form>
+      {error && <p>{error}</p>}
     </div>
   );
 }
