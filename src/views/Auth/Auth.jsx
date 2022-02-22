@@ -2,6 +2,7 @@ import './Auth.css';
 import { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
+import userInfo from '../../utils/settings';
 
 export default function Auth() {
   const [username, setUsername] = useState('');
@@ -14,8 +15,8 @@ export default function Auth() {
   const handleLogin = (e) => {
     e.preventDefault();
     if (
-      username === process.env.REACT_APP_AUTH_USERNAME &&
-      password === process.env.REACT_APP_AUTH_PASSWORD
+      username === (process.env.REACT_APP_AUTH_USERNAME || userInfo.username) &&
+      password === (process.env.REACT_APP_AUTH_PASSWORD || userInfo.password)
     ) {
       setUser({ username, password });
       const { from } = location.state || { from: { pathname: '/' } };
