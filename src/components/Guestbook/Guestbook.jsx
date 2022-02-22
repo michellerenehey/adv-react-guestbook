@@ -3,7 +3,7 @@ import { useEntries } from '../../context/EntriesContext';
 
 export default function Guestbook() {
   const { entries } = useEntries();
-
+  console.log(entries);
   return (
     <div className="Guestbook">
       {entries.map((entry) => {

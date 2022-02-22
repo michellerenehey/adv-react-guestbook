@@ -17,7 +17,7 @@ export default function Auth() {
       username === process.env.REACT_APP_AUTH_USERNAME &&
       password === process.env.REACT_APP_AUTH_PASSWORD
     ) {
-      setUser({ username });
+      setUser({ username, password });
       const { from } = location.state || { from: { pathname: '/' } };
       history.replace(from.pathname);
     } else {
@@ -31,7 +31,7 @@ export default function Auth() {
         <input
           type="email"
           value={username}
-          placeholder="enter email"
+          placeholder="enter username"
           onChange={(e) => setUsername(e.target.value)}
         />
         <input

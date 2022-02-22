@@ -12,7 +12,7 @@ export default function Header() {
       <Link to="/" className="header-link">
         Home
       </Link>
-      {user ? <p>last signed by {user}</p> : <p>~A vErY cOoL yEaRbOoK~</p>}
+      {user.username ? <p>last signed by {user.username}</p> : <p>~A vErY cOoL yEaRbOoK~</p>}
       <Link to="/friends" className="header-link">
         Friends
       </Link>

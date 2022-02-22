@@ -7,18 +7,17 @@ import signature from '../../assets/signature.png';
 
 export default function Home() {
   const [newMessage, setNewMessage] = useState('');
-  const [name, setName] = useState('');
   const { user, setUser } = useUser();
   const { entries, setEntries } = useEntries();
   const { userArray, setUserArray } = useUserArray();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setUser(name);
+    // setUser(name);
     let today = new Date();
-    setEntries([...entries, { name, note: newMessage, id: today.getSeconds() }]);
+    setEntries([...entries, { name: user.username, note: newMessage, id: today.getSeconds() }]);
     setNewMessage('');
-    setUserArray([...userArray, { name: name, id: today.getSeconds() }]);
+    setUserArray([...userArray, { name: user.username, id: today.getSeconds() }]);
   };
 
   return (
@@ -31,16 +30,6 @@ export default function Home() {
       <div className="book-outer">
         <div className="book-inner">
           <form onSubmit={handleSubmit}>
-            {!user && (
-              <div className="book-name">
-                <label>Enter your name: </label>
-                <input
-                  value={name}
-                  placeholder="...name..."
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-            )}
             <div className="book-message">
               <label>Enter a message: </label>
               <textarea
@@ -51,13 +40,14 @@ export default function Home() {
             </div>
             <div className="submit-button">
               <button type="submit">Submit</button>
-              {user && (
+              {user.username && (
                 <button
                   onClick={() => {
-                    setUser(''), setName('');
+                    setUser('');
+                    // make a logout here
                   }}
                 >
-                  Not {user}?
+                  Not {user.username}?
                 </button>
               )}
             </div>
