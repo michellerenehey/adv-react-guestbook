@@ -47,7 +47,7 @@ export default function Home() {
                     // make a logout here
                   }}
                 >
-                  Not {user.username}?
+                  LOG OUT
                 </button>
               )}
             </div>
