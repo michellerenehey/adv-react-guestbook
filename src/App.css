@@ -1,9 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 /* font-family: 'Sacramento', cursive; */
+
+@import url('https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap');
+/* font-family: 'Text Me One', sans-serif; */
+
 .App {
   text-align: center;
   margin: 0;
-  height: 100vh;
-  background-color: #ef476e79;
+  background-color: white;
+}
+
+.App.dark {
+  background: #000;
+  color: #fff;
+  transition: 0.3s all;
+}
+
+.App.light {
+  background: #fff;
+  color: #000;
+  transition: 0.3s all;
+}
+
+.theme-button {
+  width: 10vw;
 }

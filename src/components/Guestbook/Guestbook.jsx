@@ -1,16 +1,15 @@
 import './Guestbook.css';
-import { useMessages } from '../../context/MessageContext';
+import { useEntries } from '../../context/EntriesContext';
 
 export default function Guestbook() {
-  const { messages } = useMessages();
-
+  const { entries } = useEntries();
   return (
     <div className="Guestbook">
-      {messages.map((message) => {
+      {entries.map((entry) => {
         return (
-          <div key={message.id} className="entry">
-            <p className="message">{message.note}</p>
-            <p className="name">xo, {message.name}</p>
+          <div key={entry.id} className="entry">
+            <p className="message">{entry.note}</p>
+            <p className="name">xo, {entry.name}</p>
           </div>
         );
       })}

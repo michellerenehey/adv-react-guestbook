@@ -2,18 +2,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Text Me One', sans-serif;
 }
 
-.guestbook {
-  border-radius: 10px;
+.book-outer {
   border: 1px solid black;
-  padding: 10px;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: start;
   margin: 20px;
-  background-color: #ef476f;
   font-size: 25px;
 }
 
@@ -22,19 +20,31 @@
 }
 
 button {
-  background-color: #06d6a0;
+  background-color: #073b4c;
+  color: white;
   font-family: 'Open Sans Condensed', sans-serif;
   width: 75px;
   padding: 10px;
   margin: 10px;
 }
 
-.guestbook-name {
-  margin: 5px;
+.book-name {
+  margin: 10px;
 }
 
-h1 {
+h3 {
   color: #073b4c;
   font-family: 'Sacramento', cursive;
-  font-size: 10vh;
+  font-size: 8vh;
+}
+
+.book-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.signature {
+  height: 10vh;
+  margin: 10px;
 }
